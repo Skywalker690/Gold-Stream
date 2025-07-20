@@ -2,8 +2,6 @@ package com.sanjo.movies.service;
 
 import com.sanjo.movies.model.Movie;
 import com.sanjo.movies.repository.MovieRepository;
-import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
