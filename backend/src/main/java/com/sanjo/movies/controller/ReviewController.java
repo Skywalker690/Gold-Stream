@@ -8,15 +8,15 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1/reviews")
 public class ReviewController {
-
+    //Dependency
     private final ReviewService service;
-
+    //Injection
     public ReviewController(ReviewService service) {
         this.service = service;
     }
 
     @PostMapping
-    public Review createReview(@RequestBody Map<String, String> payload) {
+    public Review createReview(@RequestBody Map<String,String> payload) {
         return service.createReview(
                 payload.get("reviewBody"),
                 payload.get("imdbId")

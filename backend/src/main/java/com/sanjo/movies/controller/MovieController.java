@@ -14,9 +14,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/movies")
 public class MovieController {
-
+    //Dependency
     private final MovieService service;
-
+    //Injection
     public MovieController(MovieService service) {
         this.service = service;
     }

@@ -11,23 +11,22 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ReviewService {
-
+    //Dependency
     private final ReviewRepository repository;
     private final MongoTemplate mongoTemplate;
-
+    //Injection
     public ReviewService(ReviewRepository repository, MongoTemplate mongoTemplate) {
         this.repository = repository;
         this.mongoTemplate = mongoTemplate;
     }
 
     public Review createReview(String reviewBody, String imdbId) {
-        Review review = repository.insert(new Review(reviewBody));
 
+        Review review = repository.insert(new Review(reviewBody));
         mongoTemplate.update(Movie.class)
                 .matching(Criteria.where("imdbId").is(imdbId))
                 .apply(new Update().push("reviewIds", review.getId()))
                 .first();
-
         return review;
     }
 }
