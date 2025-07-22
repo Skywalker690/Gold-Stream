@@ -1,21 +1,19 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-# Copy Maven project files
-COPY pom.xml .
+# Copy Maven wrapper and set executable permissions
 COPY mvnw .
 COPY .mvn .mvn
+COPY pom.xml .
 
-# Download dependencies (use Docker cache effectively)
-RUN ./mvnw dependency:go-offline
+RUN chmod +x mvnw && ./mvnw dependency:go-offline
 
-# Copy the project source code
+# Copy the rest of the project
 COPY src ./src
 
-# Package the application (skip tests for faster build)
+# Build the project
 RUN ./mvnw package -DskipTests
 
-# Expose the application port
-EXPOSE 8080
-CMD ["java", "-jar", "target/movies-0.0.1-SNAPSHOT.jar"]
+# Run the Spring Boot app
+CMD ["./mvnw", "spring-boot:run"]
