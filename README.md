@@ -133,7 +133,7 @@ export default api;
 
 ## 🌍 Live Demo
 
-[**Visit Gold Stream Live**](https://your-deployment-link.com)
+[**Visit Gold Stream Live**](https://gold-stream-two.vercel.app/)
 
 ---
 
