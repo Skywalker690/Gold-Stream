@@ -43,7 +43,7 @@ const Header = () => {
                   Gold
                 </span>
                 <span className="text-xs text-gray-400 font-medium -mt-1 group-hover:text-yellow-400 transition-colors duration-300">
-                  CINEMA
+                  STREAM
                 </span>
               </div>
             </NavLink>
