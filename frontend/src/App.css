@@ -1,18 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700;900&display=swap');
 
 *{
   box-sizing: border-box;
   font-family: 'Quicksand', Arial, Helvetica, sans-serif;
 }
+
 body{
   padding:0;
   margin:0;
+  overflow-x: hidden;
 }
+
 .App{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: black;
-  color:white;
-  margin-top:10px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  color: white;
+  position: relative;
+  /* Add padding top to account for fixed header */
+  padding-top: 0;
+}
+
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(252, 211, 77, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(252, 211, 77, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(252, 211, 77, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.App > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Override main container to not have padding when we have hero section */
+main {
+  padding-top: 0;
+}
+
+/* Add margin top for non-hero pages */
+.App > header + main:not(:has(.movie-carousel-container-enhanced)) {
+  margin-top: 5rem;
 }

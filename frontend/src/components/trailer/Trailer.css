@@ -1,3 +1,133 @@
-.react-player-container{
-    height: 90vh;
+.trailer-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.trailer-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.trailer-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.5rem 0;
+}
+
+.trailer-subtitle {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.react-player-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(252, 211, 77, 0.1);
+  background: #000;
+  position: relative;
+  animation: slideUp 0.8s ease-out;
+}
+
+.react-player {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.no-trailer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 2rem;
+}
+
+.no-trailer-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
+}
+
+.no-trailer h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #fff;
+}
+
+.no-trailer p {
+  color: #9ca3af;
+  margin: 0;
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trailer-page {
+    padding: 1rem 0.5rem;
+  }
+  
+  .trailer-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .react-player-container {
+    border-radius: 12px;
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .react-player-container {
+    border-radius: 8px;
+    margin: 0;
+  }
+  
+  .no-trailer {
+    padding: 1.5rem;
+  }
+  
+  .no-trailer-icon {
+    font-size: 3rem;
+  }
+  
+  .no-trailer h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+  }
+  100% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideUp {
+  0% { 
+    opacity: 0; 
+    transform: translateY(30px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
 }
