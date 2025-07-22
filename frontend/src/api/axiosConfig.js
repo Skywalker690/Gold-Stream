@@ -1,7 +1,11 @@
-// src/api/axios.js
 import axios from 'axios';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080';
+
 export default axios.create({
-    baseURL: 'https://1fd9fade2108.ngrok-free.app/', // Updated baseURL
-    headers: { "ngrok-skip-browser-warning": "true" }
+    baseURL: API_BASE_URL,
+    headers: {
+        "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "true"
+    }
 });
