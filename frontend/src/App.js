@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import axios from './api/axiosConfig'; // Updated import path if your file is named axios.js
+import axios from './api/axiosConfig'; 
+import Layout from './components/Layout';
+import { Route,Routes } from 'react-router-dom';
+import Home from './components/home/Home';
+import './App.css'
+
 
 function App() {
     const [movies, setMovies] = useState([]);
@@ -8,7 +13,7 @@ function App() {
 
     const getMovies = async () => {
         try {
-            const response = await axios.get("/movies"); // Now correctly mapped to /api/v1/movies via baseURL
+            const response = await axios.get("/movies"); 
             setMovies(response.data);
         } catch (err) {
             console.error(err);
@@ -22,19 +27,18 @@ function App() {
         getMovies();
     }, []);
 
-    if (loading) return <p>Loading movies...</p>;
-    if (error) return <p>{error}</p>;
 
     return (
         <div className="App">
-            <h1>Movie List</h1>
-            <ul>
-                {movies.map(movie => (
-                    <li key={movie.imdbId}>
-                        {movie.title}
-                    </li>
-                ))}
-            </ul>
+
+            <Routes>
+                <Route path='/' element={<Layout/>}>
+                    <Route path='/' element={<Home movies={movies}/>}></Route>
+
+                </Route>
+            </Routes>
+
+            
         </div>
     );
 }
