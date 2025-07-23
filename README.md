@@ -1,4 +1,4 @@
-# Gold Stream 🎼️
+# Gold Stream 
 
 **Gold Stream** is a modern **Full Stack Movie Discovery Platform** featuring trailers, reviews, and watchlists with a cinematic UI.
 Built with **React**, **Spring Boot**, **MongoDB**, and **Tailwind CSS**, it delivers a seamless movie browsing experience with robust backend services.
