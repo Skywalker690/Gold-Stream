@@ -1,7 +1,13 @@
-# Gold Stream 🎜️
+# Gold Stream 🎼️
 
 **Gold Stream** is a modern **Full Stack Movie Discovery Platform** featuring trailers, reviews, and watchlists with a cinematic UI.
 Built with **React**, **Spring Boot**, **MongoDB**, and **Tailwind CSS**, it delivers a seamless movie browsing experience with robust backend services.
+
+> ⚠️ **Note:** The frontend is deployed on **Vercel**, and the backend is hosted on **Render**. Due to backend cold starts on Render, initial site load may take up to **10 seconds**.
+>
+> ✨ **Sample data** is preloaded into the database. Check the `backend/sample-data` folder for more info.
+>
+> 🗃️ **MongoDB Atlas** is used for database hosting and is already integrated with the backend.
 
 ---
 
@@ -22,7 +28,7 @@ Built with **React**, **Spring Boot**, **MongoDB**, and **Tailwind CSS**, it del
 * **Icons:** FontAwesome, MUI Icons
 * **HTTP Client:** Axios
 * **Backend:** Spring Boot (Java)
-* **Database:** MongoDB
+* **Database:** MongoDB (Hosted on MongoDB Atlas)
 
 ---
 
@@ -52,11 +58,12 @@ Built with **React**, **Spring Boot**, **MongoDB**, and **Tailwind CSS**, it del
 |   |-- repositories
 |-- src/main/resources/application.properties
 |-- pom.xml
+|-- sample-data
 ```
 
 ---
 
-## 📆 Setup & Installation
+## 🗖 Setup & Installation
 
 ### Frontend
 
@@ -95,7 +102,44 @@ cd ../backend
 
 ---
 
-## 🚩 API Configuration with Ngrok
+### Frontend
+
+1. **Clone the repo:**
+
+```bash
+git clone https://github.com/yourusername/gold-stream.git
+cd gold-stream/frontend
+```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+```
+
+3. **Start the app:**
+
+```bash
+npm start
+```
+
+### Backend
+
+1. Navigate to the backend folder:
+
+```bash
+cd ../backend
+```
+
+2. Run the Spring Boot application:
+
+```bash
+./mvnw spring-boot:run
+```
+
+---
+
+## 🌈 API Configuration with Ngrok
 
 ### Start your backend with ngrok:
 
@@ -128,7 +172,6 @@ const api = axios.create({
 export default api;
 ```
 
-
 ---
 
 ## 🌍 Live Demo
@@ -146,9 +189,6 @@ This project is **MIT Licensed**.
 ## 🌟 Credits
 
 * UI/UX Inspired by modern cinema apps
-
 * API Data powered by **The Movie Database (TMDB)**
-
 * UI/UX Inspired by modern cinema apps
-
 * Developed by **Sanjo**
