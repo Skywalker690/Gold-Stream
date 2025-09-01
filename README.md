@@ -70,7 +70,7 @@ Built with **React**, **Spring Boot**, **MongoDB**, and **Tailwind CSS**, it del
 1. **Clone the repo:**
 
 ```bash
-git clone https://github.com/yourusername/gold-stream.git
+git clone https://github.com/Skywalker690/gold-stream.git
 cd gold-stream/frontend
 ```
 
@@ -102,42 +102,6 @@ cd ../backend
 
 ---
 
-### Frontend
-
-1. **Clone the repo:**
-
-```bash
-git clone https://github.com/yourusername/gold-stream.git
-cd gold-stream/frontend
-```
-
-2. **Install dependencies:**
-
-```bash
-npm install
-```
-
-3. **Start the app:**
-
-```bash
-npm start
-```
-
-### Backend
-
-1. Navigate to the backend folder:
-
-```bash
-cd ../backend
-```
-
-2. Run the Spring Boot application:
-
-```bash
-./mvnw spring-boot:run
-```
-
----
 
 ## 🌈 API Configuration with Ngrok
 
